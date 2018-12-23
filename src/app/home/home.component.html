@@ -1,0 +1,67 @@
+<html style="background-image: url('./assets/images/common.jpg');">
+
+<body>    
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+          <ul class="nav navbar-nav">                    
+            <li><a routerLink="/" routerLinkActive="active">Home</a></li>
+            <li><a routerLink="/about" routerLinkActive="active">About</a></li>
+            <li><a routerLink="/contact" routerLinkActive="active">Contact</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+                
+                    <li><a routerLink="/signup" routerLinkActive="active"><span class="glyphicon glyphicon-user"></span>Sign up</a></li>
+                    <li><a routerLink="/login" routerLinkActive="active"><span class="glyphicon glyphicon-log-in"></span>Login</a></li>
+              
+          </ul>
+        </div>
+      </nav>
+                 
+    <router-outlet></router-outlet>
+<div class="container">
+  <h3 style="background-color: lightcoral">Book Hotels:</h3>
+  <table class="table" style="background-color: cyan">
+    <thead>
+    <tr>
+      <th>City, Hotel Or Area</th>
+      <th>Check-in</th>
+      <th>Check-out</th>
+      <th>Guests</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><input type="text" placeholder="Area"/></td>
+      <td><input type="date"/></td>
+      <td><input type="date"/></td>
+      <td><input type="number" placeholder="No. of Guests"/></td>
+      <td><button (click)="search()" class="btn btn-default">Search</button></td>
+    </tr>
+  </tbody>
+  </table>
+</div>
+
+<br>
+
+<div class="container" >
+    <h3 style="background-color: lightcoral" >Search Hotels :</h3><br>
+      <div class="container" style="background-color: darkgoldenrod">
+          <app-hotel-list></app-hotel-list> 
+      </div>
+ </div>
+
+
+ <br><br>
+ <!--feedback area-->
+  <div>
+  <app-feedback></app-feedback>
+  </div>
+
+
+<br><br>
+<!--footer area-->
+  <div>
+  <app-footer></app-footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<div class="container" *ngIf="!submitted" style="background-color:rgb(52, 219, 102)">
+  <h2>Login</h2>
+    <div class="row">
+  
+          <!-- <tr>
+              <td>Username:</td>
+              <td><input type="text" /></td>
+            
+              <td>Password:</td>
+              <td><input type="password"/></td>
+            
+              <td><button (click)="login()" class="btn btn-default">Login</button></td>
+            </tr> -->
+
+            
+            <form #loginForm="ngForm" (ngSubmit)="onSubmit()">
+                <div class="form-group">
+                      <label form="username">UserName:</label>
+                      <input type="text" id="username" name="username"
+                            [(ngModel)]="user.username" class="form-control" required/>
+                </div>
+
+                <div class="form-group">
+                    <label form="password">Password:</label>
+                    <input type="text" id="password" name="password"
+                          [(ngModel)]="user.password" class="form-control" required/>
+              </div>
+
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+         
+
+        </div>
+  
+  
+</div>
+
+<div class="container" *ngIf="submitted" style="background-color:blanchedalmond">
+  Login Successful with id : {{user.username}} 
+</div>

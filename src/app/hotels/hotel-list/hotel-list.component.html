@@ -1,0 +1,88 @@
+<!-- <div class="container">
+    <ul class="hotels">
+      <li *ngFor="let hotel of hotels$ | async" 
+      [class.selected]="hotel.hotelid === selectedId">
+      <a [routerLink]="['/hotel', hotel.hotelid]">
+          <span>{{hotel.hotelid}}</span>{{hotel.hotelname}}
+      </a>
+
+      </li>
+    </ul>
+
+
+</div> -->
+
+<!--REST Api call service-->
+<br>
+<!--Name , city and area tags with search button-->
+<div class="row">
+    <div class="col-sm-3">
+    <b>Name:  </b> <input type="text" name="byName" placeholder="Search By Name" [(ngModel)]="searchbyname"/>
+    </div>
+    <br>
+    <div class="col-sm-3">
+    <b>City:  </b> <input type="text" name="byCity"placeholder="Search By City" [(ngModel)]="searchbycity"/>
+    </div>
+    <br>
+    <div class="col-sm-3">
+    <b>Area:  </b> <input type="text" name="byProvince" placeholder="Search By Area" [(ngModel)]="searchbyarea"/>
+    </div>
+    <div class="col-sm-3">
+        <button type="button" class="btn btn-default" (click)="searchhotels()">
+            <span class="glyphicon glyphicon-search"></span> Search
+          </button>
+    </div>
+    <br><br>
+
+  </div>
+
+  <br>
+<!--closing the name serach area tags-->
+
+<div class="container">
+    HotelName: <input type="text" [(ngModel)]="username">
+    type here koushik kothagal
+    <button (click)="search()">Search</button>
+        <div *ngIf="response">
+          <p style="background-color:yellow">
+              Login Name : {{response.login}}
+              No of Repos: {{response.public_repos}}
+              No of Gists: {{response.public_gists}}
+              No of Followers: {{response.followers}}
+          </p> 
+        </div>
+                 
+</div>
+
+
+<br>
+
+
+<!--table -->
+<div style="margin:1%; padding-bottom: 2%; padding-top: 2%"> 
+  
+  <div class="hotels">
+    <table class="table table-bordered table-hover">
+    <thead class="table-light">
+        <tr>
+          <td scope="col">#</td>
+          <td scope="col">Hotel Name</td>
+          <td scope="col">State</td>
+          <td scope="col">City</td>
+          <td scope="col">Area</td>
+          <td scope="col">Postal Code</td>
+        </tr>
+    </thead>
+    <tbody *ngFor="let hotel of hotels$ | async">
+      <tr>
+      <td>{{hotel.hotelid}}</td>
+      <td>{{hotel.hotelname}}</td>
+      <td>{{hotel.state}}</td>
+      <td>{{hotel.city}}</td>
+      <td>{{hotel.area}}</td>
+      <td>{{hotel.postalcode}}</td>
+    </tr>
+    </tbody>
+  </table>
+  </div>
+</div>

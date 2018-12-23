@@ -1,0 +1,18 @@
+<div class="container">
+<button (click)="toggleCollapse()">Continue with FeedBack</button>
+<div class="container" *ngIf="!isCollapsed"><hr>
+    <h3 class="title" style="background-color: lightgray">FeedBack</h3>
+<p>It will be great if you would let us know the feedback for visiting out site.</p>
+  <div>
+      <div>
+        <label>Message: </label>
+      </div>
+      <div>
+        <textarea [(ngModel)]="message" rows="5" cols="100" [disabled]="sending"></textarea>
+      </div>
+    </div>
+    <button (click)="save()" class=".btn">Save</button>
+
+
+</div>
+</div>
